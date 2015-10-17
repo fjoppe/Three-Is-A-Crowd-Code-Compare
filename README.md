@@ -13,7 +13,7 @@ If you want to run this solution, you need to change the file paths in the web.c
 The paths must point to the location of the level-data, or indicate the leveldata file you want to use.  
 Currently these paths start with something like this: "F:\Hobby\Games\ThreeIsACrowd Code Compare\..."
 
-Please also check whether the WCF endpoints are correct on your local machine.
+Please also check the configs whether the WCF endpoints are correct on your local machine.
 
 To run the level editor, make project "LE.Application" the starting project.  
 To run the game itself, agains two AI players, make "GameEngine.Webserver" the starting project.  
