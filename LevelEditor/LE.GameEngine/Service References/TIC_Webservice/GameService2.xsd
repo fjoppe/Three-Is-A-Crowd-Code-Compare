@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:TIC" elementFormDefault="qualified" targetNamespace="urn:TIC" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:58250/Services/GameService.CSharp.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GameEngine.CSharp.Game.Board" />
+  <xs:complexType name="BoardSerializable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActiveTileList" nillable="true" type="tns:ArrayOfHexagonTileSerializable" />
+      <xs:element minOccurs="0" name="FortressesPerPlayer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoardSerializable" nillable="true" type="tns:BoardSerializable" />
+  <xs:complexType name="ArrayOfHexagonTileSerializable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HexagonTileSerializable" nillable="true" type="tns:HexagonTileSerializable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHexagonTileSerializable" nillable="true" type="tns:ArrayOfHexagonTileSerializable" />
+  <xs:complexType name="HexagonTileSerializable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fortress" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GameEngine.CSharp.Game.Board" minOccurs="0" name="TileType" type="q1:TileType" />
+      <xs:element minOccurs="0" name="TileValue" type="xs:int" />
+      <xs:element minOccurs="0" name="X" type="xs:int" />
+      <xs:element minOccurs="0" name="Y" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HexagonTileSerializable" nillable="true" type="tns:HexagonTileSerializable" />
+</xs:schema>

@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="LE.Application.GamePanel4"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="450" xmlns:my="clr-namespace:LE.Visuals.Board;assembly=LE.Visuals">
+    <Canvas Height="450" Width="450">
+        <Canvas>
+            <Canvas.Clip>
+                <RectangleGeometry Rect="0,0,450,450"/>
+            </Canvas.Clip>
+            <Rectangle Width="450" Height="450" Stroke="Black" Fill="#FFE5F2EC"/>
+            <Canvas Canvas.Left="225" Canvas.Top="225">
+                <Canvas.RenderTransform>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                </Canvas.RenderTransform>
+                <Canvas x:Name="Board"/>
+                <Canvas x:Name="CrossSections"/>
+            </Canvas>
+        </Canvas>
+        <Canvas Canvas.Top="405" Canvas.Left="3">
+            <Canvas.RenderTransform>
+                <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+            </Canvas.RenderTransform>
+            <my:Fortress x:Name="FortressSelect" MouseLeftButtonDown="OnFortressSelected"/>
+            <TextBlock Canvas.Left="70" Canvas.Top="15" x:Name="Fortresses" Text="0" Width="20" Height="29" FontSize="20"/>
+        </Canvas>
+        <Canvas Canvas.Left="0" Canvas.Top="0">
+            <Canvas.RenderTransform>
+                <ScaleTransform ScaleX="0.4" ScaleY="0.4"/>
+            </Canvas.RenderTransform>
+            <my:Yellow/>
+            <TextBlock x:Name="YellowCount" Text="0" Canvas.Left="100" FontSize="32"/>
+            <my:Blue Canvas.Top="60"/>
+            <TextBlock x:Name="BlueCount" Text="0" Canvas.Top="60" Canvas.Left="100" FontSize="32"/>
+            <my:Red Canvas.Top="120"/>
+            <TextBlock x:Name="RedCount" Text="0" Canvas.Top="120" Canvas.Left="100" FontSize="32"/>
+        </Canvas>
+        <Canvas Canvas.Left="60" Canvas.Top="0">
+            <Canvas.RenderTransform>
+                <ScaleTransform ScaleX="0.4" ScaleY="0.4"/>
+            </Canvas.RenderTransform>
+            <my:Fortress />
+            <TextBlock x:Name="YellowFortress" Text="0" Canvas.Left="100" FontSize="32"/>
+            <my:Fortress Canvas.Top="60" />
+            <TextBlock x:Name="BlueFortress" Text="0" Canvas.Top="60" Canvas.Left="100" FontSize="32"/>
+            <my:Fortress Canvas.Top="120" />
+            <TextBlock x:Name="RedFortress" Text="0" Canvas.Top="120" Canvas.Left="100" FontSize="32"/>
+        </Canvas>
+        <TextBlock Text="No moves" x:Name="NoMoves" FontSize="28" Canvas.Left="173" Canvas.Top="372" Visibility="Collapsed"/>
+        <TextBlock Text="Game Over" x:Name="GameOver" FontSize="28" Canvas.Left="209" Canvas.Top="379" Visibility="Collapsed"/>
+        <my:BoardHexagon Canvas.Left="380" Canvas.Top="12" x:Name="MyTurn" />
+    </Canvas>
+</UserControl>

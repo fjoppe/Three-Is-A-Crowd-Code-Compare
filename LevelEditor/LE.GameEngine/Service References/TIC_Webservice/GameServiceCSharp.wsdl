@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GameServiceCSharp" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:58250/Services/GameService.CSharp.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:58250/Services/GameService.CSharp.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:58250/Services/GameService.CSharp.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GameEngine.CSharp.Game.Engine" />
+      <xsd:import schemaLocation="http://localhost:58250/Services/GameService.CSharp.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GameEngine.CSharp.Game.Board" />
+      <xsd:import schemaLocation="http://localhost:58250/Services/GameService.CSharp.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:58250/Services/GameService.CSharp.svc?xsd=xsd5" namespace="urn:TIC" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICSharpService_GetUniqueIdentifier_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUniqueIdentifier" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_GetUniqueIdentifier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUniqueIdentifierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_StartNewGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartNewGame" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_StartNewGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartNewGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_JoinGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:JoinGame" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_JoinGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JoinGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_GetCurrentTurn_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentTurn" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_GetCurrentTurn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentTurnResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_GetPossibleMoves_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPossibleMoves" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_GetPossibleMoves_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPossibleMovesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_ChooseTurn_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChooseTurn" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_ChooseTurn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChooseTurnResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_ChooseFortressedTurn_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChooseFortressedTurn" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_ChooseFortressedTurn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChooseFortressedTurnResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_RetrieveBoardData_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveBoardData" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_RetrieveBoardData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveBoardDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_GetBoardState_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBoardState" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_GetBoardState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBoardStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_GetGameStats_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGameStats" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_GetGameStats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGameStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_WhatIsMyColor_InputMessage">
+    <wsdl:part name="parameters" element="tns:WhatIsMyColor" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_WhatIsMyColor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WhatIsMyColorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_WhatIsMyStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:WhatIsMyStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICSharpService_WhatIsMyStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WhatIsMyStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICSharpService">
+    <wsdl:operation name="GetUniqueIdentifier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICSharpService/GetUniqueIdentifier" message="tns:ICSharpService_GetUniqueIdentifier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICSharpService/GetUniqueIdentifierResponse" message="tns:ICSharpService_GetUniqueIdentifier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartNewGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICSharpService/StartNewGame" message="tns:ICSharpService_StartNewGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICSharpService/StartNewGameResponse" message="tns:ICSharpService_StartNewGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="JoinGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICSharpService/JoinGame" message="tns:ICSharpService_JoinGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICSharpService/JoinGameResponse" message="tns:ICSharpService_JoinGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTurn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICSharpService/GetCurrentTurn" message="tns:ICSharpService_GetCurrentTurn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICSharpService/GetCurrentTurnResponse" message="tns:ICSharpService_GetCurrentTurn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPossibleMoves">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICSharpService/GetPossibleMoves" message="tns:ICSharpService_GetPossibleMoves_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICSharpService/GetPossibleMovesResponse" message="tns:ICSharpService_GetPossibleMoves_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChooseTurn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICSharpService/ChooseTurn" message="tns:ICSharpService_ChooseTurn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICSharpService/ChooseTurnResponse" message="tns:ICSharpService_ChooseTurn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChooseFortressedTurn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICSharpService/ChooseFortressedTurn" message="tns:ICSharpService_ChooseFortressedTurn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICSharpService/ChooseFortressedTurnResponse" message="tns:ICSharpService_ChooseFortressedTurn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveBoardData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICSharpService/RetrieveBoardData" message="tns:ICSharpService_RetrieveBoardData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICSharpService/RetrieveBoardDataResponse" message="tns:ICSharpService_RetrieveBoardData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoardState">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICSharpService/GetBoardState" message="tns:ICSharpService_GetBoardState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICSharpService/GetBoardStateResponse" message="tns:ICSharpService_GetBoardState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGameStats">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICSharpService/GetGameStats" message="tns:ICSharpService_GetGameStats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICSharpService/GetGameStatsResponse" message="tns:ICSharpService_GetGameStats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WhatIsMyColor">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICSharpService/WhatIsMyColor" message="tns:ICSharpService_WhatIsMyColor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICSharpService/WhatIsMyColorResponse" message="tns:ICSharpService_WhatIsMyColor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WhatIsMyStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICSharpService/WhatIsMyStatus" message="tns:ICSharpService_WhatIsMyStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICSharpService/WhatIsMyStatusResponse" message="tns:ICSharpService_WhatIsMyStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SoapEndpoint" type="tns:ICSharpService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUniqueIdentifier">
+      <soap:operation soapAction="http://tempuri.org/ICSharpService/GetUniqueIdentifier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartNewGame">
+      <soap:operation soapAction="http://tempuri.org/ICSharpService/StartNewGame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JoinGame">
+      <soap:operation soapAction="http://tempuri.org/ICSharpService/JoinGame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTurn">
+      <soap:operation soapAction="http://tempuri.org/ICSharpService/GetCurrentTurn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPossibleMoves">
+      <soap:operation soapAction="http://tempuri.org/ICSharpService/GetPossibleMoves" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChooseTurn">
+      <soap:operation soapAction="http://tempuri.org/ICSharpService/ChooseTurn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChooseFortressedTurn">
+      <soap:operation soapAction="http://tempuri.org/ICSharpService/ChooseFortressedTurn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveBoardData">
+      <soap:operation soapAction="http://tempuri.org/ICSharpService/RetrieveBoardData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoardState">
+      <soap:operation soapAction="http://tempuri.org/ICSharpService/GetBoardState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGameStats">
+      <soap:operation soapAction="http://tempuri.org/ICSharpService/GetGameStats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhatIsMyColor">
+      <soap:operation soapAction="http://tempuri.org/ICSharpService/WhatIsMyColor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhatIsMyStatus">
+      <soap:operation soapAction="http://tempuri.org/ICSharpService/WhatIsMyStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GameServiceCSharp">
+    <wsdl:port name="SoapEndpoint" binding="tns:SoapEndpoint">
+      <soap:address location="http://localhost:58250/Services/GameService.CSharp.svc/Soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

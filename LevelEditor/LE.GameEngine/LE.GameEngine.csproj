@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C53E514-ED3B-4386-9895-25994810E633}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LE.GameEngine</RootNamespace>
+    <AssemblyName>LE.GameEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Board\BoardSerializable.cs" />
+    <Compile Include="Board\HexagonTile.cs" />
+    <Compile Include="Board\HexagonTileSerializable.cs" />
+    <Compile Include="Board\ITileControl.cs" />
+    <Compile Include="Board\TileType.cs" />
+    <Compile Include="Service References\TIC_Webservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <None Include="GameEngine\Game.cs" />
+    <Compile Include="GameEngine\GameStats.cs" />
+    <Compile Include="GameEngine\PlayerStatus.cs" />
+    <Compile Include="GameEngine\TileColor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Service References\TIC_Webservice\GameService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIC_Webservice\GameService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIC_Webservice\GameService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIC_Webservice\GameService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIC_Webservice\GameService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIC_Webservice\GameService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIC_Webservice\GameServiceCSharp.wsdl" />
+    <None Include="Service References\TIC_Webservice\LE.GameEngine.TIC_Webservice.BoardSerializable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TIC_Webservice\LE.GameEngine.TIC_Webservice.GameStats.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TIC_Webservice\LE.GameEngine.TIC_Webservice.PlayerStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TIC_Webservice\LE.GameEngine.TIC_Webservice.TileColor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TIC_Webservice\LE.GameEngine.TIC_Webservice.TileType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TIC_Webservice\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TIC_Webservice\GameService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TIC_Webservice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TIC_Webservice\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TIC_Webservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

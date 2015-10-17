@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GameEngine.CSharp.Game.Board" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GameEngine.CSharp.Game.Board" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="TileType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="none" />
+      <xs:enumeration value="board" />
+      <xs:enumeration value="blue" />
+      <xs:enumeration value="red" />
+      <xs:enumeration value="yellow" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TileType" nillable="true" type="tns:TileType" />
+</xs:schema>

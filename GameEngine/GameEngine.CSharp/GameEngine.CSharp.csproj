@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5429A325-C179-4930-BE8D-FDEF4B93FB9A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameEngine.CSharp</RootNamespace>
+    <AssemblyName>GameEngine.CSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.1.2\lib\net40\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\TwoWayMapper.cs" />
+    <Compile Include="Game\AI\AIPlayer.cs" />
+    <Compile Include="Game\AI\FortressStragegies\BorderStrategy.cs" />
+    <Compile Include="Game\AI\FortressStragegies\DefaultFortressStrategy.cs" />
+    <Compile Include="Game\AI\FortressStragegies\FieldPositionStrategy.cs" />
+    <Compile Include="Game\AI\FortressStragegies\IFortressStrategy.cs" />
+    <Compile Include="Game\AI\Strategies\BorderStrategy.cs" />
+    <Compile Include="Game\AI\Strategies\DeepInpectionStrategy.cs" />
+    <Compile Include="Game\AI\Strategies\DefaultStrategy.cs" />
+    <Compile Include="Game\AI\Strategies\GameOverStrategy.cs" />
+    <Compile Include="Game\AI\Strategies\IStrategy.cs" />
+    <Compile Include="Game\AI\Strategies\KillPlayerTurnStrategy.cs" />
+    <Compile Include="Game\AI\MoveValuation.cs" />
+    <Compile Include="Game\AI\Strategies\PointCountStrategy.cs" />
+    <Compile Include="Game\AI\Strategies\PreventNeighbourStrategy.cs" />
+    <Compile Include="Game\Board\BoardSerializable.cs" />
+    <Compile Include="Game\Board\HexagonTile.cs" />
+    <Compile Include="Game\Board\HexagonTileSerializable.cs" />
+    <Compile Include="Game\Board\ITileControl.cs" />
+    <Compile Include="Game\Board\TileType.cs" />
+    <Compile Include="Game\Engine\Game.cs" />
+    <Compile Include="Game\Engine\GameConfiguration.cs" />
+    <Compile Include="Game\Engine\GameStats.cs" />
+    <Compile Include="Game\Engine\PlayerProperties.cs" />
+    <Compile Include="Game\Engine\PlayerStatus.cs" />
+    <Compile Include="Game\Engine\TileColor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
